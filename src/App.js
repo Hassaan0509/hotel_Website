@@ -6,12 +6,16 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import Signup from "./Components/Signup/Signup";
 import { useEffect } from "react";
+import Card from "./Components/Cards/Card";
+import List from "./Pages/List/List";
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
 
 function App() {
   const { visited } = useSelector((state) => state.location);
   const dispatch = useDispatch();
   const location = useLocation();
-  console.log(visited)
+  console.log(visited);
 
   useEffect(() => {
     if (location.pathname === "/signup") {
@@ -19,19 +23,20 @@ function App() {
     } else {
       dispatch({ type: "changeLocation", payload: true });
     }
-  },[visited])
-
+  }, [visited]);
 
   return (
     <>
-      <div className="d-flex flex-column div">
+      <List />
+      {/* <Card /> */}
+      {/* <div className="d-flex flex-column div">
         {visited && <Navbar />}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
         <div className=" mt-auto w-100">{visited && <Footer />}</div>
-      </div>
+      </div> */}
     </>
   );
 }
