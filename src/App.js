@@ -11,6 +11,7 @@ import Card from "./Components/Cards/Card";
 import List from "./Pages/List/List";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
+import Hotel from "./Pages/Hotel/Hotel";
 
 function App() {
   const { visited } = useSelector((state) => state.location);
@@ -28,7 +29,8 @@ function App() {
 
   return (
     <>
-      <List />
+      {/* <Hotel /> */}
+      {/* <List /> */}
       {/* <Card /> */}
       {/* <div className="d-flex flex-column div">
         {visited && <Navbar />}
