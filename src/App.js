@@ -6,6 +6,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import Signup from "./Components/Signup/Signup";
 import { useEffect } from "react";
+import Contact from "./Pages/Contact/Contact";
 
 function App() {
   const { visited } = useSelector((state) => state.location);
@@ -19,7 +20,7 @@ function App() {
     } else {
       dispatch({ type: "changeLocation", payload: true });
     }
-  },[visited])
+  }, [visited])
 
 
   return (
@@ -29,6 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <div className=" mt-auto w-100">{visited && <Footer />}</div>
       </div>
