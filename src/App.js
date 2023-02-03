@@ -6,13 +6,20 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import Signup from "./Components/Signup/Signup";
 import { useEffect } from "react";
+<<<<<<< HEAD
 import Contact from "./Pages/Contact/Contact";
+=======
+import Card from "./Components/Cards/Card";
+import List from "./Pages/List/List";
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
+>>>>>>> 112ff7325e5fddfabbcd01c074bb23b2752e2659
 
 function App() {
   const { visited } = useSelector((state) => state.location);
   const dispatch = useDispatch();
   const location = useLocation();
-  console.log(visited)
+  console.log(visited);
 
   useEffect(() => {
     if (location.pathname === "/signup") {
@@ -20,12 +27,18 @@ function App() {
     } else {
       dispatch({ type: "changeLocation", payload: true });
     }
+<<<<<<< HEAD
   }, [visited])
 
+=======
+  }, [visited]);
+>>>>>>> 112ff7325e5fddfabbcd01c074bb23b2752e2659
 
   return (
     <>
-      <div className="d-flex flex-column div">
+      <List />
+      {/* <Card /> */}
+      {/* <div className="d-flex flex-column div">
         {visited && <Navbar />}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -33,7 +46,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <div className=" mt-auto w-100">{visited && <Footer />}</div>
-      </div>
+      </div> */}
     </>
   );
 }
